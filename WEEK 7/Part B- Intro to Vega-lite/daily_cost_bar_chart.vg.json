@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Cheapest European cities"
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2021/1.%20Intro%20to%20vega-lite/1.%20basic%20bar%20chart/data/city_daily_cost.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "daily_cost",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "city",
+            "type": "nominal"
+        }
+    }
+}
