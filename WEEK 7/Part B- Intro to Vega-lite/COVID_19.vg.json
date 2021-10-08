@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "data/COVID_19.csv" },
+  "vconcat": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "timeUnit": "yearmonth",
+          "field": "date",
+          "type": "ordinal",
+          "title": "date (year-month)"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "new_cases",
+          "title": "Sum of New Cases"
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Africa",
+              "Asia",
+              "Europe",
+              "North America",
+              "Oceania",
+              "South America"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total_cases",
+          "type": "quantitative",
+          "scale": { "zero": false }
+        },
+        "y": {
+          "field": "new_cases",
+          "type": "quantitative",
+          "scale": { "zero": false }
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal"
+        },
+        "shape": {
+          "field": "continent",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}
